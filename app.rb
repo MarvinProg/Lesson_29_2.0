@@ -14,5 +14,6 @@ class Teacher < ActiveRecord::Base
 end
 
 get '/' do
+  @teachers = Teacher.all
   erb :index
 end
