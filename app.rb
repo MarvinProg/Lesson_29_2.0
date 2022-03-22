@@ -9,6 +9,11 @@ set :database, {adapter: "sqlite3", database: "my_db_29.db"}
 
 class Person < ActiveRecord::Base 
   self.table_name = 'persons'
+  validates :person_name, presence: true
+  validates :person_phone, presence: true
+  validates :date_time, presence: true
+  validates :teacher, presence: true
+  validates :color, presence: true
 end
 
 class Teacher < ActiveRecord::Base 
