@@ -9,28 +9,28 @@
 <form action="/appointment" method="post">
   <div class="mb-3">
     <label class="form-label">Ваше имя</label>
-    <input type="text" name="user_name" class="form-control" placeholder="Введите ваше имя" value="<%= @user_name %>">
+    <input type="text" name="person[person_name]" class="form-control" placeholder="Введите ваше имя" value="">
   </div>
   <div class="mb-3">
     <label class="form-label">Телефон</label>
-    <input type="text" name="user_phone" class="form-control" placeholder="Введите ваш номер телефона" value="<%= @user_phone %>">
+    <input type="text" name="person[person_phone]" class="form-control" placeholder="Введите ваш номер телефона" value="">
   </div>
   <div class="mb-3">
     <label class="form-label">Время записиe</label>
-    <input id="datetimepicker" type="text" name="date_time" class="form-control" placeholder="Введите время посещения" value="<%= @date_time %>">
+    <input id="datetimepicker" type="text" name="person[date_time]" class="form-control" placeholder="Введите время посещения" value="">
   </div>
   <br>
-  <select class="form-select" aria-label="Default select example" name="select_teacher">
+  <select class="form-select" aria-label="Default select example" name="person[teacher]">
     <option selected>Выберите учителя</option>
-    <option value="Valentina Ivanovna" <%= @select_teacher == 'Валентина Иванова' ? 'selected' : '' %>>Валентина Иванова</option> 
-    <option value="Sergei Mikhailovich" <%= @select_teacher == 'Сергей Михайлович' ? 'selected' : '' %>>Сергей Михайлович</option> 
-    <option value="Alina Sergeyevna" <%= @select_teacher == 'Алина Сергеевна' ? 'selected' : '' %>>Алина Сергеевна</option> 
+    <option value="Valentina Ivanovna">Валентина Иванова</option> 
+    <option value="Sergei Mikhailovich">Сергей Михайлович</option> 
+    <option value="Alina Sergeyevna">Алина Сергеевна</option> 
   </select>
   <br>
   <br>
   <div class="mb-3" >
     <label class="form-label">Выверите цвет:</label>
-    <select name="color_jquery">
+    <select name="person[color]">
       <option value="#7bd148">Green</option>
       <option value="#5484ed">Bold blue</option>
       <option value="#a4bdfc">Blue</option>
