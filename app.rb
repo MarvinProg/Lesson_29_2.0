@@ -66,5 +66,6 @@ post '/appointment' do
 end
 
 get '/teacher/:id' do 
+  @teacher = Teacher.find(params[:id])
   erb :teacher
 end
