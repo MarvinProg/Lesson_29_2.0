@@ -9,7 +9,7 @@ set :database, {adapter: "sqlite3", database: "my_db_29.db"}
 
 class Person < ActiveRecord::Base 
   self.table_name = 'persons'
-  validates :person_name, presence: true
+  validates :person_name, presence: true, length: {minimum: 3}
   validates :person_phone, presence: true
   validates :date_time, presence: true
   validates :teacher, presence: true
@@ -24,7 +24,8 @@ get '/' do
   erb :index
 end
 
-get '/appointment' do 
+get '/appointment' do
+  @per = Person.new
   erb :appointment
 end
 
@@ -50,12 +51,12 @@ post '/appointment' do
   #   end
   # end
 
-  per = Person.new params[:person]
-  if per.save
-    erb "Запись прошла успешно. Valid: #{per.valid?}"
+  @per = Person.new params[:person]
+  if @per.save
+    erb "Запись прошла успешно. Valid: #{@per.valid?}"
   else 
     # erb "Что то пошло не так, запись не прошла."
-    @error = per.errors.full_messages.first
+    @error = @per.errors.full_messages.first
     erb :appointment
   end
 
