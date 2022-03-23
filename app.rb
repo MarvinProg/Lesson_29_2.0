@@ -64,3 +64,7 @@ post '/appointment' do
   # erb "#{per.valid?}"
   # erb :appointment
 end
+
+get '/teacher/:id' do 
+  erb :teacher
+end
