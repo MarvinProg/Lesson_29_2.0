@@ -54,7 +54,9 @@ post '/appointment' do
   if per.save
     erb "Запись прошла успешно. Valid: #{per.valid?}"
   else 
-    erb "Что то пошло не так, запись не прошла."
+    # erb "Что то пошло не так, запись не прошла."
+    @error = per.errors.full_messages.first
+    erb :appointment
   end
 
   # erb "Спасибо, запись прошла успешно."
