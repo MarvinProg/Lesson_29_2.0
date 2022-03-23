@@ -51,8 +51,13 @@ post '/appointment' do
   # end
 
   per = Person.new params[:person]
-  per.save
+  if per.save
+    erb "Запись прошла успешно. Valid: #{per.valid?}"
+  else 
+    erb "Что то пошло не так, запись не прошла."
+  end
 
-  erb "Спасибо, запись прошла успешно."
+  # erb "Спасибо, запись прошла успешно."
+  # erb "#{per.valid?}"
   # erb :appointment
 end
