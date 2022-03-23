@@ -6,8 +6,8 @@ class CreateTeachers < ActiveRecord::Migration[5.2]
       t.timestamps
     end
 
-    Teacher.create(:name => 'Valentina Ivanovna')
-    Teacher.create(:name => 'Sergei Mikhailovich')
-    Teacher.create(:name => 'Alina Sergeyevna')
+    Teacher.create(:name => 'Валентина Иванова')
+    Teacher.create(:name => 'Сергей Михайлович')
+    Teacher.create(:name => 'Алина Сергеевна')
   end
 end
