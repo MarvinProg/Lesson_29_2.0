@@ -69,3 +69,13 @@ get '/teacher/:id' do
   @teacher = Teacher.find(params[:id])
   erb :teacher
 end
+
+get '/pupils' do 
+  @per_s = Person.order('created_at DESC')
+  erb :pupils
+end
+
+get '/pupil/:id' do 
+  @per = Person.find(params[:id])
+  erb :pupil
+end

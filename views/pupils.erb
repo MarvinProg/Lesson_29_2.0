@@ -1,0 +1,6 @@
+<h2>Список записавшихся на курс учеников</h2>
+<% @per_s.each do |p|%>
+  <p>
+    <a href="/pupil/<%= p.id %>"><%= p.person_name %></a> 
+  </p>
+<% end %>
